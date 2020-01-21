@@ -41,18 +41,27 @@
             <mat-form-field class="full-width">
                 <mat-label>Last Name</mat-label>
                 <input  matInput  placeholder="Last Name" name="lname"  required>
-             </mat-form-field>
-             <mat-form-field class="full-width">
+            </mat-form-field>
+            <mat-form-field class="full-width">
                 <mat-label>Phone Number</mat-label>
                 <input  matInput  placeholder="Phone Number" name="phoneNum"  required>
-             </mat-form-field>
-             <mat-form-field class="full-width">
+            </mat-form-field>
+            <mat-form-field class="full-width">
                 <mat-label>Email</mat-label>
                 <input  matInput  placeholder="Email" name="email">
-             </mat-form-field>
-             <mat-form-field>
-                 <input matInput placeholder="Choose a date">
-             </mat-form-field>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Event Request Date</mat-label>
+                <input matInput [matDatepicker]="picker2" placeholder="Choose a date">
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2></mat-datepicker>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Event Request Dates</mat-label>
+                 <input matInput placeholder="Choose a date" [satDatepicker]="picker" [value]="date">
+                 <sat-datepicker #picker [rangeMode]="true"></sat-datepicker>
+                 <sat-datepicker-toggle matSuffix [for]="picker"></sat-datepicker-toggle>
+            </mat-form-field>
         </form>
     </mat-card-content>
     <mat-card-actions>
