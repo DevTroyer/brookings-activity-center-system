@@ -15,6 +15,7 @@
                 <mat-label>Last Name</mat-label>
                 <input  matInput  placeholder="Last Name" name="lname"  required>
             </mat-form-field>
+            <br>
             <mat-form-field class="full-width">
                 <mat-label>Phone Number</mat-label>
                 <input  matInput  placeholder="Phone Number" name="phoneNum"  required>
@@ -23,15 +24,22 @@
                 <mat-label>Email</mat-label>
                 <input  matInput  placeholder="Email" name="email" required>
             </mat-form-field>
+            <br>
+            <mat-radio-group>
+                <label labelPosition="before">I am requesting a:</label> 
+                <mat-radio-button value="oneDay">One day event</mat-radio-button>
+                <mat-radio-button value="multipleDays">Multiple day event</mat-radio-button>
+            </mat-radio-group>
+            <br>
             <mat-form-field>
                 <mat-label>Event Request Date</mat-label>
-                <input matInput [matDatepicker]="picker2" placeholder="Choose a date">
+                <input matInput [matDatepicker]="picker2" placeholder="Choose a date" required>
                 <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
                 <mat-datepicker #picker2></mat-datepicker>
             </mat-form-field>
             <mat-form-field>
                 <mat-label>Event Request Dates</mat-label>
-                 <input matInput placeholder="Choose a date" [satDatepicker]="picker" [value]="date">
+                 <input matInput placeholder="Choose a date" [satDatepicker]="picker" [value]="date" required>
                  <sat-datepicker #picker [rangeMode]="true"></sat-datepicker>
                  <sat-datepicker-toggle matSuffix [for]="picker"></sat-datepicker-toggle>
             </mat-form-field>
