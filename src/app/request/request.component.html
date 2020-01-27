@@ -43,6 +43,14 @@
                  <sat-datepicker #picker [rangeMode]="true"></sat-datepicker>
                  <sat-datepicker-toggle matSuffix [for]="picker"></sat-datepicker-toggle>
             </mat-form-field>
+            <div class="container">
+                <h5>Select a room from the building blueprint:</h5>
+                <img mat-card-image src="../../assets/blueprint.jpg" style="width: 100%;">
+                <mat-radio-button id="ballroom" value="ballroom"></mat-radio-button>
+                <mat-radio-button id="activity-room" value="activity-room"></mat-radio-button>
+                <mat-radio-button id="meeting-room" value="meeting-room"></mat-radio-button>
+                <mat-radio-button id="other-room" value="other-room"></mat-radio-button>
+            </div>
         </form>
     </mat-card-content>
     <mat-card-actions>
