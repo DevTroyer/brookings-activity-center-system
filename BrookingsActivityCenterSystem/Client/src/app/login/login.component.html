@@ -1,26 +1,4 @@
 <!-- Employee Login Markup -->
-<!-- <mat-toolbar>
-  <h1>Brookings Activity Center Employee Login</h1>
-</mat-toolbar>
-<mat-card class="my-card">
-   <mat-card-content>
-      <form class="my-form">
-         <mat-form-field class="full-width">
-            <input  matInput  placeholder="Username" name="username" required>
-            <mat-hint>Usernames are case-sensitive.</mat-hint>
-         </mat-form-field>
-         <br>
-         <mat-form-field class="full-width">
-            <input type="password" matInput  placeholder="Password" name="password" required>
-            <mat-hint>Passwords are case-sensitive.</mat-hint>
-         </mat-form-field>
-      </form>
-   </mat-card-content>
-   <mat-card-actions>
-      <button mat-raised-button (click)="login()" color="primary">LOGIN</button>
-   </mat-card-actions>
-</mat-card> -->
-
 <section id="login">
    <div class="container">
       <form>
@@ -33,7 +11,7 @@
             <label for="password">Password:</label>
             <input type="password" class="form-control" id="password" placeholder="Enter employee password">
          </div>
-         <button type="submit" class="btn btn-primary">Login</button>
       </form>
+      <button mat-raised-button (click)="login()" color="primary">LOGIN</button>
    </div>
  </section>
