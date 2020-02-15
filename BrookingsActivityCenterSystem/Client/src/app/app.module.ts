@@ -7,12 +7,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { LoginComponent } from './login/login.component';
 import { RequestComponent } from './request/request.component';
+import { MenuComponent } from './menu/menu.component';
+import { ScheduleComponent } from './schedule/schedule.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RequestComponent
+    RequestComponent,
+    MenuComponent,
+    ScheduleComponent
   ],
   imports: [
     BrowserModule,
