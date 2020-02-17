@@ -6,7 +6,7 @@ using BrookingsActivityCenterSystem.Models;
 
 namespace BrookingsActivityCenterSystem.Repositories
 {
-    public class IStaffRepository
+    public interface IStaffRepository
     {
         Staff GetById(int id);
         List<Staff> GetAll();

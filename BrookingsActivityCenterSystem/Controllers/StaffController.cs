@@ -20,6 +20,5 @@ namespace BrookingsActivityCenterSystem.Controllers
             _staffRepository = staffRepository;
         }
 
-
     }
 }
