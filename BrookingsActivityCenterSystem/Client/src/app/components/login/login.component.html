@@ -1,17 +1,34 @@
 <!-- Employee Login -->
 <section id="login">
    <div class="container">
-      <form>
+      <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
          <div class="form-group">
             <label for="email">Email:</label>
-            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter employee email">
+            <input 
+               type="email" 
+               class="form-control" 
+               id="email" 
+               aria-describedby="emailHelp" 
+               ngModel 
+               name="email" 
+               placeholder="Enter employee email"
+               required
+               email>
             <small id="emailHelp" class="form-text text-muted">Brookings Activity Center employee emails end with @bac.com</small>
          </div>
          <div class="form-group">
             <label for="password">Password:</label>
-            <input type="password" class="form-control" id="password" placeholder="Enter employee password">
+            <input 
+               type="password" 
+               id="password"
+               class="form-control"
+               ngModel
+               name="password"
+               required
+               minlength="8"
+               placeholder="Enter employee password">
          </div>
+         <button mat-raised-button [disabled]="!loginForm.valid" color="primary" type="submit">LOGIN</button>
       </form>
-      <button mat-raised-button (click)="login()" color="primary">LOGIN</button>
    </div>
  </section>
