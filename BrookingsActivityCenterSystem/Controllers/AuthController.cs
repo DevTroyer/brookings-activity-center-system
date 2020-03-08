@@ -18,14 +18,14 @@ namespace BrookingsActivityCenterSystem.Controllers
         [HttpPost]
         public IActionResult Authenticate(UserAuthModel user)
         {
-            var staff = _staffRepository.Authenticate(user.Username, user.Password);
+            var staff = _staffRepository.Authenticate(user.Email, user.Password);
 
             if(staff != null)
             {
                 return Ok(staff);
             }
 
-            return BadRequest(new { message = "Error - Username or password is incorrect." });
+            return BadRequest(new { message = "Login failed. Email or password is incorrect." });
         }
     }
 }
