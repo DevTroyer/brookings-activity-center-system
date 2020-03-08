@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
-import { User } from '../models/user';
+import { UserAuthModel } from '../models/userAuthModel';
 
 @Injectable({
     providedIn: 'root'
@@ -10,8 +10,8 @@ import { User } from '../models/user';
 export class AuthService {
     constructor(private http: HttpClient) {}
 
-    login(username: string, password: string) {
-        return this.http.post<User>(`api/authenticate`, { username: username, password: password })
+    login(email: string, password: string) {
+        return this.http.post<UserAuthModel>(`api/authenticate`, { email: email, password: password })
         .pipe(map(user => {
             console.log(user);
             if (user !== null) {
