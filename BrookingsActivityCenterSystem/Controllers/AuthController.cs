@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using BrookingsActivityCenterSystem.Repositories;
 using BrookingsActivityCenterSystem.Models;
+using System;
 
 namespace BrookingsActivityCenterSystem.Controllers
 {
@@ -16,7 +17,7 @@ namespace BrookingsActivityCenterSystem.Controllers
         }
 
         [HttpPost]
-        public IActionResult Authenticate(UserAuthModel user)
+        public IActionResult Authenticate([FromBody] UserAuthModel user)
         {
             var staff = _staffRepository.Authenticate(user.Email, user.Password);
 

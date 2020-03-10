@@ -17,10 +17,11 @@ export class LoginComponent implements OnInit {
     ) {
   }
 
+  // Life cycle hook called by Angular to indicate that Angular is done constructing the component
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
-      email: [''],
-      password: ['']
+      email: ['tucker.troyer@bac.com'],
+      password: ['something']
     });
   }
 
@@ -28,10 +29,10 @@ export class LoginComponent implements OnInit {
     return this.loginForm.controls;
   }
 
-  onSubmit(form: NgForm) {
+  onSubmit(form) {
     this.authService
     .login(this.f.email.value, this.f.password.value)
     .pipe(first());
-    form.reset();
+    //form.reset();
   }
 }

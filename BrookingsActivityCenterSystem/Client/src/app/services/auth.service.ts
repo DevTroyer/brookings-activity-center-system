@@ -10,16 +10,14 @@ import { UserAuthModel } from '../models/userAuthModel';
 export class AuthService {
     constructor(private http: HttpClient) {}
 
-    login(email: string, password: string) {
-        return this.http.post<UserAuthModel>(`api/authenticate`, { email: email, password: password })
-        .pipe(map(user => {
-            console.log(user);
+    login(emailArg: string, passwordArg: string) {
+        return this.http.post<UserAuthModel>(`api/authenticate`, { email: emailArg, password: passwordArg })
+        .pipe(user => {
             if (user !== null) {
                 localStorage.setItem('currentUser', JSON.stringify(user));
             }
-
             return user;
-        }));
+        });
     }
 
     logout() {
