@@ -11,7 +11,7 @@
 <section id="request-form">
   <div class="wrapper">
       <div class="container">
-        <form class="my-form">
+        <form class="my-form" #requestForm="ngForm" (ngSubmit)="onSubmit(requestForm)">
             <mat-form-field class="full-width">
                 <mat-label>First Name</mat-label>
                 <input matInput name="fname" required>
@@ -68,8 +68,8 @@
                     <option value="lasagna">Italian Lasagna</option>
                 </select>
             </mat-form-field>
+            <button mat-raised-button color="primary" type="submit">REQUEST</button>
         </form>
-        <button mat-raised-button (click)="request()" color="primary">REQUEST</button>
       </div>
   </div>
 </section>
