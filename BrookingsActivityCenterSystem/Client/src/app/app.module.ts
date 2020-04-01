@@ -9,7 +9,9 @@ import { DataTablesModule } from 'angular-datatables';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
+import { RequestBannerComponent } from './components/request/request-banner/request-banner.component';
 import { RequestComponent } from './components/request/request.component';
+import { MenuBannerComponent } from './components/menu/menu-banner/menu-banner.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { ScheduleComponent } from './components/schedule/schedule.component';
 import { KitchenInventoryComponent } from './components/inventory/kitchen/kitchen.component';
@@ -19,7 +21,9 @@ import { EquipmentInventoryComponent } from './components/inventory/equipment/eq
   declarations: [
     AppComponent,
     LoginComponent,
+    RequestBannerComponent,
     RequestComponent,
+    MenuBannerComponent,
     MenuComponent,
     ScheduleComponent,
     KitchenInventoryComponent,
