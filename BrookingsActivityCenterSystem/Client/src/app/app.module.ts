@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DataTablesModule } from 'angular-datatables';
 
 import { AppComponent } from './app.component';
+import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { LoginComponent } from './components/login/login.component';
 import { RequestBannerComponent } from './components/request/request-banner/request-banner.component';
 import { RequestComponent } from './components/request/request.component';
@@ -20,6 +21,7 @@ import { EquipmentInventoryComponent } from './components/inventory/equipment/eq
 @NgModule({
   declarations: [
     AppComponent,
+    ToolbarComponent,
     LoginComponent,
     RequestBannerComponent,
     RequestComponent,
