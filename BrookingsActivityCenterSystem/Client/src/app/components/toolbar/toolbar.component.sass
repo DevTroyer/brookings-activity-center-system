@@ -1,29 +1,35 @@
-nav
+.navbar
     background: #760505
     height: 6.616862326574173vh
     width: 100%
+    display: flex
+    justify-content: center
 
-nav h1
+.logo
     color: #FFFFFF
     font-family: 'Italianno', cursive
     text-shadow: 2px 2px #161616
-    margin-left: 18px
+    margin: 0
 
-nav li
-    margin-right: 20px
+.navbar-nav
+    display: flex
+    justify-content: center
 
-nav li:hover
+.nav-item
+    margin-left: 8px
+
+.nav-item:hover
     background-color: #161616
 
-nav a
-    padding: 5px
-    margin: 0
+.nav-link
     text-decoration: none
     color: #FFFFFF
 
-nav a:hover
-    color: #FFFFFF
-
-@media (max-width: 1024px)
-    nav li
+@media (max-width: 1374px)
+    .nav-item
         display: none
+    .navbar
+        text-align: center
+    .logo
+        width: 100%
+        margin: auto
