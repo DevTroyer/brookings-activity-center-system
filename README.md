@@ -16,3 +16,6 @@ All of the test data used to run this project will be directly seeded using Enti
 - npm install angular-datatables --save
 - npm install @types/jquery --save-dev
 - npm install @types/datatables.net --save-dev
+- npm install --save angular-calendar date-fns
+- npm install --save @ng-bootstrap/ng-bootstrap
+- npm install --save flatpickr angularx-flatpickr
