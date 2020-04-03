@@ -1,3 +1,4 @@
+// General imports
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -7,6 +8,14 @@ import { MaterialModule } from './material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DataTablesModule } from 'angular-datatables';
 
+// Schedule-specific imports
+import { CommonModule } from '@angular/common';
+import { FlatpickrModule } from 'angularx-flatpickr';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+
+// Component imports
 import { AppComponent } from './app.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { LoginComponent } from './components/login/login.component';
@@ -39,8 +48,16 @@ import { EquipmentInventoryComponent } from './components/inventory/equipment/eq
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
-    DataTablesModule
+    DataTablesModule,
+    CommonModule,
+    NgbModalModule,
+    FlatpickrModule.forRoot(),
+    CalendarModule.forRoot({
+    provide: DateAdapter,
+    useFactory: adapterFactory
+    })
   ],
+  exports: [ScheduleComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
