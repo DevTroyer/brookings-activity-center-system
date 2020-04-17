@@ -2,11 +2,12 @@
 <nav class="navbar fixed-top navbar-expand-lg">
     <h1 class="logo">Brookings Activity Center</h1>
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item"><a class="nav-link" routerLink="/">REQUEST EVENT</a></li>
-      <li class="nav-item"><a class="nav-link" routerLink="/equipment-inventory">EQUIPMENT INVENTORY</a></li>
-      <li class="nav-item"><a class="nav-link" routerLink="/kitchen-inventory">KITCHEN INVENTORY</a></li>
-      <li class="nav-item"><a class="nav-link" routerLink="/schedule">SCHEDULE</a></li>
-      <li class="nav-item"><a class="nav-link" routerLink="/menu">EVENT MENU</a></li>
-      <li class="nav-item"><a class="nav-link" routerLink="/login">EMPLOYEE LOGIN</a></li>
+      <li class="nav-item" *ngIf="!validateLogin() || validateAdmin()"><a class="nav-link" routerLink="/">REQUEST EVENT</a></li>
+      <li class="nav-item" *ngIf="validateEquipment() || validateAdmin()"><a class="nav-link" routerLink="/equipment-inventory">EQUIPMENT INVENTORY</a></li>
+      <li class="nav-item" *ngIf="validateKitchen() || validateAdmin()"><a class="nav-link" routerLink="/kitchen-inventory">KITCHEN INVENTORY</a></li>
+      <li class="nav-item" *ngIf="validateSchedule() || validateAdmin()"><a class="nav-link" routerLink="/schedule">SCHEDULE</a></li>
+      <li class="nav-item" *ngIf="!validateLogin() || validateKitchen() || validateAdmin()"><a class="nav-link" routerLink="/menu">EVENT MENU</a></li>
+      <li class="nav-item" *ngIf="!validateLogin()"><a class="nav-link" routerLink="/login">EMPLOYEE LOGIN</a></li>
+      <li class="nav-item" *ngIf="validateLogin()" (click)="onLogout()"><a class="nav-link" routerLink="/login">LOGOUT</a></li>
     </ul>
 </nav>

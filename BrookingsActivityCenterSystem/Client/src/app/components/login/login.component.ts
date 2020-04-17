@@ -10,32 +10,64 @@ import { first } from 'rxjs/operators';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
+  private formSubmitAttempt: boolean;
 
   constructor(
-    private authService: AuthService,
-    private formBuilder: FormBuilder
-    ) {
-  }
+    private fb: FormBuilder,
+    private authService: AuthService
+  ) {}
 
-  // Life cycle hook called by Angular to indicate that Angular is done constructing the component
   ngOnInit() {
-    this.loginForm = this.formBuilder.group({
-      email: ['', Validators.required],
-      password: ['', [Validators.required, 
-      Validators.minLength(6)]]
+    this.loginForm = this.fb.group({
+      email: [''],
+      password: ['']
     });
   }
 
-  get f() {
-    return this.loginForm.controls;
+  isValidEmail(field: string) {
+    return (
+      this.loginForm.get(field).value === 'kitchen' ||
+      this.loginForm.get(field).value === 'equipment' ||
+      this.loginForm.get(field).value === 'staff' ||
+      this.loginForm.get(field).value === 'admin'
+    );
   }
 
   onSubmit() {
-    this.authService
-    .login(this.f.email.value, this.f.password.value)
-    .pipe(first());
-
-    console.log(this.f.email.value, this.f.password.value);
-    //form.reset();
+    this.authService.login(this.loginForm.value);
+    this.formSubmitAttempt = true;
   }
 }
+
+
+
+
+// loginForm: FormGroup;
+
+//   constructor(
+//     private authService: AuthService,
+//     private formBuilder: FormBuilder
+//     ) {
+//   }
+
+//   // Life cycle hook called by Angular to indicate that Angular is done constructing the component
+//   ngOnInit() {
+//     this.loginForm = this.formBuilder.group({
+//       email: ['', Validators.required],
+//       password: ['', [Validators.required, 
+//       Validators.minLength(6)]]
+//     });
+//   }
+
+//   get f() {
+//     return this.loginForm.controls;
+//   }
+
+//   onSubmit() {
+//     this.authService
+//     .login(this.f.email.value, this.f.password.value)
+//     .pipe(first());
+
+//     console.log(this.f.email.value, this.f.password.value);
+//     //form.reset();
+//   }
