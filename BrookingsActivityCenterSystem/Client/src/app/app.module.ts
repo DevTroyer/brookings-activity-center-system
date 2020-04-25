@@ -26,6 +26,12 @@ import { MenuComponent } from './components/menu/menu.component';
 import { ScheduleComponent } from './components/schedule/schedule.component';
 import { KitchenInventoryComponent } from './components/inventory/kitchen/kitchen.component';
 import { EquipmentInventoryComponent } from './components/inventory/equipment/equipment.component';
+import {MessageComponent} from './components/message/message.component';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -38,7 +44,8 @@ import { EquipmentInventoryComponent } from './components/inventory/equipment/eq
     MenuComponent,
     ScheduleComponent,
     KitchenInventoryComponent,
-    EquipmentInventoryComponent
+    EquipmentInventoryComponent,
+    MessageComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,6 +58,7 @@ import { EquipmentInventoryComponent } from './components/inventory/equipment/eq
     DataTablesModule,
     CommonModule,
     NgbModalModule,
+    MatDialogModule, MatInputModule, MatButtonModule, MatCardModule, MatFormFieldModule,
     FlatpickrModule.forRoot(),
     CalendarModule.forRoot({
     provide: DateAdapter,
