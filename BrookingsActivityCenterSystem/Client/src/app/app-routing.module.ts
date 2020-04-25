@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: 'equipment-inventory', component: EquipmentInventoryComponent },
   { path: 'kitchen-inventory', component: KitchenInventoryComponent },
   { path: 'schedule', component: ScheduleComponent },
-  { path: '**', component: MessageComponent},
+  { path: 'error', component: MessageComponent},
   { path: '**', redirectTo: '' }
 ];
 

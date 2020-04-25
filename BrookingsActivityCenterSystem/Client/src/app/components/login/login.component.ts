@@ -10,15 +10,14 @@ import { first } from 'rxjs/operators';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
-  private formSubmitAttempt: boolean;
 
   constructor(
-    private fb: FormBuilder,
+    private formBuilder: FormBuilder,
     private authService: AuthService
   ) {}
 
   ngOnInit() {
-    this.loginForm = this.fb.group({
+    this.loginForm = this.formBuilder.group({
       email: [''],
       password: ['']
     });
@@ -35,7 +34,7 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     this.authService.login(this.loginForm.value);
-    this.formSubmitAttempt = true;
+    this.loginForm.reset();
   }
 }
 

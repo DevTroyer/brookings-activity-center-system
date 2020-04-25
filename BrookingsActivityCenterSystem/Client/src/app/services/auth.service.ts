@@ -26,8 +26,7 @@ export class AuthService {
     constructor(private router: Router, private dialog: MatDialog) {}
 
     login(user: User) {
-        
-        if (user.email === 'gordan.ramsey@bac.com' && user.password === 'HellsKitchen') {
+        if (user.email === 'gordon.ramsay@bac.com' && user.password === 'HellsKitchen') {
             this.loggedIn.next(true);
             this.kitchenManager = true;
             this.router.navigate(['kitchen-inventory']);
@@ -43,14 +42,16 @@ export class AuthService {
             this.loggedIn.next(true);
             this.admin = true;
             this.router.navigate(['menu']);
-        }else
-        {
-            this.dialog.open(MessageComponent,{ data: {
-            message:  "Incorrect Password!"
-            }});
+        } else {
+            this.dialog.open(
+                MessageComponent,
+                {
+                    data: { message: 'Incorrect Password!' }
+                }
+            );
         }
     }
-    
+
     logout() {
         this.loggedIn.next(false);
         this.router.navigate(['login']);
