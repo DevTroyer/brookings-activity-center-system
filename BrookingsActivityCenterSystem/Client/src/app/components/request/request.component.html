@@ -3,23 +3,23 @@
 <section id="request-form">
     <div class="wrapper">
         <div class="container">
-            <form class="my-form" #requestForm="ngForm" (ngSubmit)="onSubmit(requestForm)">
+            <form class="my-form" #requestForm="ngForm" (ngSubmit)="onSubmit(requestForm.value)">
                 <mat-form-field class="full-width">
                     <mat-label>First Name</mat-label>
-                    <input matInput name="fname" required>
+                    <input matInput name="fname" required ngModel>
                 </mat-form-field>
                 <mat-form-field class="full-width">
                     <mat-label>Last Name</mat-label>
-                    <input matInput name="lname" required>
+                    <input matInput name="lname" required ngModel>
                 </mat-form-field>
                 <br>
                 <mat-form-field class="full-width">
                     <mat-label>Phone Number</mat-label>
-                    <input matInput name="phoneNum" required>
+                    <input matInput name="phoneNum" required ngModel>
                 </mat-form-field>
                 <mat-form-field class="full-width">
                     <mat-label>Email</mat-label>
-                    <input matInput name="email" required>
+                    <input matInput name="email" required ngModel>
                 </mat-form-field>
                 <br>
                 <mat-radio-group>

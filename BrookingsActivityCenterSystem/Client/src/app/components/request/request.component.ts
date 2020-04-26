@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder} from '@angular/forms';
+import { FormGroup, FormBuilder, NgForm} from '@angular/forms';
 import { RequestService } from '../../services/request.service';
 import { first } from 'rxjs/operators';
 import { MatDialog } from '@angular/material';
 import { requestMessageComponent } from '../requestMessage/requestMessage.component';
+import { FormsModule } from '@angular/forms';
+
 
 
 @Component({
@@ -30,14 +32,36 @@ export class RequestComponent implements OnInit {
     return this.requestForm.controls;
   }
 
-  onSubmit(form) {
-    this.dialog.open(
-      requestMessageComponent,
-      {
-          data: { message: 'Incorrect Password!' }
-      }
-  );
-    //form.reset();
+  onSubmit(requestForm) {
+
+    if(requestForm.fname === '' && requestForm.lname === '' && requestForm.phoneNum === '' && requestForm.email === '')
+    {
+      alert('Unable to process your request! Please fill the required fields!');
+    }
+    else if(requestForm.fname === '')
+    {
+      alert('Unable to process your request! Pls fill in your first name!');
+    }
+    else if(requestForm.lname === '')
+    {
+      alert('Unable to process your request! Pls fill in your Last name!');
+    }
+    else if(requestForm.phoneNum === '')
+    {
+      alert('Unable to process your request! Pls fill in your phone number!');
+    }
+    else if(requestForm.email === '')
+    {
+      alert('Unable to process your request! Pls fill in your email!');
+    }
+    else{
+        this.dialog.open(
+          requestMessageComponent,
+          {
+              data: { message: 'Incorrect Password!' }
+          }
+      );
+    }
   }
 
 }
