@@ -63,7 +63,7 @@ export class ScheduleComponent {
     {
       start: subDays(startOfDay(new Date()), 1),
       end: addDays(new Date(), 1),
-      title: 'A 3 day event',
+      title: 'Daktronics PI Event',
       color: colors.red,
       actions: this.actions,
       allDay: true,
@@ -75,21 +75,21 @@ export class ScheduleComponent {
     },
     {
       start: startOfDay(new Date()),
-      title: 'An event with no end date',
+      title: 'SDSU Senior Design Meetup',
       color: colors.yellow,
       actions: this.actions,
     },
     {
       start: subDays(endOfMonth(new Date()), 3),
       end: addDays(endOfMonth(new Date()), 3),
-      title: 'A long event that spans 2 months',
+      title: 'Dr. Shin\'s Research Convention',
       color: colors.blue,
       allDay: true,
     },
     {
       start: addHours(startOfDay(new Date()), 2),
       end: addHours(new Date(), 2),
-      title: 'A draggable and resizable event',
+      title: 'SDSU Graduation Ceremony',
       color: colors.yellow,
       actions: this.actions,
       resizable: {
