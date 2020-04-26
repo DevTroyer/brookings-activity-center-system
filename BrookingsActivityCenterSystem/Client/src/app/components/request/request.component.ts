@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder} from '@angular/forms';
 import { RequestService } from '../../services/request.service';
 import { first } from 'rxjs/operators';
+import { MatDialog } from '@angular/material';
+import { requestMessageComponent } from '../requestMessage/requestMessage.component';
+
 
 @Component({
   selector: 'app-request',
@@ -12,7 +15,7 @@ export class RequestComponent implements OnInit {
   requestForm: FormGroup;
   constructor(
     private requestService: RequestService,
-    private formBuilder: FormBuilder) { 
+    private formBuilder: FormBuilder, private dialog: MatDialog) { 
   }
 
   ngOnInit() {
@@ -28,10 +31,12 @@ export class RequestComponent implements OnInit {
   }
 
   onSubmit(form) {
-    this.requestService.request(this.f.FirstName.value, this.f.LastName.value, this.f.PhoneNumber.value)
-    .pipe(first());
-
-    console.log(this.f.FirstName.value, this.f.LastName.value, this.f.PhoneNumber.value)
+    this.dialog.open(
+      requestMessageComponent,
+      {
+          data: { message: 'Incorrect Password!' }
+      }
+  );
     //form.reset();
   }
 

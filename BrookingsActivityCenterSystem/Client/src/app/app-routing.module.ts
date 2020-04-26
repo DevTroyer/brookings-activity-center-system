@@ -7,6 +7,7 @@ import { EquipmentInventoryComponent } from './components/inventory/equipment/eq
 import { KitchenInventoryComponent } from './components/inventory/kitchen/kitchen.component';
 import { ScheduleComponent } from './components/schedule/schedule.component';
 import { MessageComponent } from './components/message/message.component';
+import { requestMessageComponent } from './components/requestMessage/requestMessage.component';
 
 const routes: Routes = [
   { path: '', component: RequestComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'kitchen-inventory', component: KitchenInventoryComponent },
   { path: 'schedule', component: ScheduleComponent },
   { path: 'error', component: MessageComponent},
+  { path: 'congratulations', component: requestMessageComponent},
   { path: '**', redirectTo: '' }
 ];
 

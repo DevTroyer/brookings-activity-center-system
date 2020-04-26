@@ -27,6 +27,7 @@ import { ScheduleComponent } from './components/schedule/schedule.component';
 import { KitchenInventoryComponent } from './components/inventory/kitchen/kitchen.component';
 import { EquipmentInventoryComponent } from './components/inventory/equipment/equipment.component';
 import {MessageComponent} from './components/message/message.component';
+import { requestMessageComponent } from './components/requestMessage/requestMessage.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import {MessageComponent} from './components/message/message.component';
     KitchenInventoryComponent,
     EquipmentInventoryComponent,
     MessageComponent,
+    requestMessageComponent,
   ],
   imports: [
     BrowserModule,
