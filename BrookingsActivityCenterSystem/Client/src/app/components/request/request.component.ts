@@ -40,19 +40,23 @@ export class RequestComponent implements OnInit {
     }
     else if(requestForm.fname === '')
     {
-      alert('Unable to process your request! Pls fill in your first name!');
+      alert('Unable to process your request! Please fill in your first name!');
     }
     else if(requestForm.lname === '')
     {
-      alert('Unable to process your request! Pls fill in your Last name!');
+      alert('Unable to process your request! Please fill in your Last name!');
     }
     else if(requestForm.phoneNum === '')
     {
-      alert('Unable to process your request! Pls fill in your phone number!');
+      alert('Unable to process your request! Please fill in your phone number!');
     }
     else if(requestForm.email === '')
     {
-      alert('Unable to process your request! Pls fill in your email!');
+      alert('Unable to process your request! Please fill in your email!');
+    }
+    else if(requestForm.eventTime === '')
+    {
+      alert('Unable to process your request! Please fill in the time!');
     }
     else{
         this.dialog.open(
