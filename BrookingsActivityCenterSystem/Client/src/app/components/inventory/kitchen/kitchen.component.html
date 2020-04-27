@@ -1,95 +1,66 @@
-<!-- Kitchen Inventory System -->
 <div class="container">
-  <div class="elements">
-    <h1>Kitchen Inventory Management</h1>
-    <div class="buttons">
-      <button mat-raised-button color="primary">Add Ingredient</button>
-      <button mat-raised-button color="primary">Edit Ingredient</button>
-      <button mat-raised-button color="primary">Delete Ingredient</button>
+    <div class="elements">
+        <h1>Kitchen Inventory Management</h1>
     </div>
-  </div>
-  <table datatable class="row-border hover">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Ingredient</th>
-        <th>Quantity</th>
-        <th>Expiration Date</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>1</td>
-        <td>Carrots</td>
-        <td>125</td>
-        <td>12/13/2020</td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>Shrimp</td>
-        <td>230</td>
-        <td>11/03/2020</td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td>Oysters</td>
-        <td>38</td>
-        <td>10/14/2020</td>
-      </tr>
-      <tr>
-        <td>4</td>
-        <td>Eggs</td>
-        <td>72</td>
-        <td>12/26/2020</td>
-      </tr>
-      <tr>
-        <td>5</td>
-        <td>Steak (6oz)</td>
-        <td>105</td>
-        <td>9/17/2021</td>
-      </tr>
-      <tr>
-        <td>6</td>
-        <td>Fettucine Pasta</td>
-        <td>21</td>
-        <td>7/3/2020</td>
-      </tr>
-      <tr>
-        <td>7</td>
-        <td>Onions</td>
-        <td>7</td>
-        <td>8/8/2020</td>
-      </tr>
-      <tr>
-        <td>8</td>
-        <td>Mushrooms</td>
-        <td>1</td>
-        <td>5/17/2020</td>
-      </tr>
-      <tr>
-        <td>9</td>
-        <td>Cream Cheese</td>
-        <td>2</td>
-        <td>7/1/2020</td>
-      </tr>
-      <tr>
-        <td>10</td>
-        <td>Spinach</td>
-        <td>17</td>
-        <td>8/16/2020</td>
-      </tr>
-      <tr>
-        <td>11</td>
-        <td>Hamburger (12oz roll)</td>
-        <td>3</td>
-        <td>12/21/2020</td>
-      </tr>
-      <tr>
-        <td>12</td>
-        <td>Pepperoni</td>
-        <td>10</td>
-        <td>12/28/2020</td>
-      </tr>
-    </tbody>
-  </table>
+    <div class="buttons">
+        <button (click)=toggle() mat-raised-button color="primary">Add Ingredient</button>
+        <button mat-raised-button color="primary">Edit Ingredient</button>
+        <button mat-raised-button color="primary">Delete Ingredient</button>
+    </div>
+
+    <div [hidden]="isShow" class="wrapper">
+        <div class="container">
+            <form [formGroup]="itemForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="IngredientName">Ingredient Name</label>
+                    <input 
+                      type="text" 
+                      formControlName="IngredientName" 
+                      class="form-control" 
+                      id="IngredientName"
+                      aria-describedby="emailHelp"
+                      name="IngredientName"
+                      placeholder="Enter employee email"
+                      required
+                      email/>
+                </div>
+                <div class="form-group">
+                   <label for="quantityNum">Quantity</label>
+                   <input type="text" 
+                      formControlName="quantityNum" 
+                      class="form-control" 
+                      id="quantityNum"
+                      placeholder="Enter employee password"/>
+                </div>
+                <div class="form-group">
+                    <label for="locationName">Location</label>
+                    <input type="text" 
+                       formControlName="locationName" 
+                       class="form-control" 
+                       id="locationName"
+                       placeholder="Enter employee password"/>
+                 </div>
+                <div class="form-group">
+                    <button mat-raised-button color="primary" type="submit" id="login-button">Add Ingredient</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br><br><br>
+    <table datatable class="row-border hover">
+        <thead>
+            <tr>
+                <th *ngFor = "let column of headers">
+                    {{column}}
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor = "let item of FoodItems">
+                <td *ngFor = "let column of headers">
+                    {{item[column]}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>

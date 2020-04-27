@@ -1,94 +1,65 @@
-<!-- Equipment Inventory System -->
 <div class="container">
     <div class="elements">
         <h1>Equipment Inventory Management</h1>
         <div class="buttons">
-          <button mat-raised-button color="primary">Add Equipment</button>
+          <button (click)=toggle() mat-raised-button color="primary">Add Equipment</button>
           <button mat-raised-button color="primary">Edit Equipment</button>
           <button mat-raised-button color="primary">Delete Equipment</button>
         </div>
-      </div>
+    </div>
+
+    <div [hidden]="isShow" class="wrapper">
+        <div class="container">
+            <form [formGroup]="itemForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="equipmentName">Equipment Name</label>
+                    <input 
+                      type="text" 
+                      formControlName="equipmentName" 
+                      class="form-control" 
+                      id="equipmentName"
+                      aria-describedby="emailHelp"
+                      name="equipmentName"
+                      placeholder="Enter employee email"
+                      required
+                      email/>
+                </div>
+                <div class="form-group">
+                   <label for="quantityNum">Quantity</label>
+                   <input type="text" 
+                      formControlName="quantityNum" 
+                      class="form-control" 
+                      id="quantityNum"
+                      placeholder="Enter employee password"/>
+                </div>
+                <div class="form-group">
+                    <label for="locationName">Location</label>
+                    <input type="text" 
+                       formControlName="locationName" 
+                       class="form-control" 
+                       id="locationName"
+                       placeholder="Enter employee password"/>
+                 </div>
+                <div class="form-group">
+                    <button mat-raised-button color="primary" type="submit" id="login-button">Add Equipment</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br><br><br>
     <table datatable class="row-border hover">
         <thead>
             <tr>
-                <th>ID</th>
-                <th>Equipment</th>
-                <th>Quantity</th>
-                <th>Location</th>
+                <th *ngFor = "let column of headers">
+                    {{column}}
+                </th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>1</td>
-                <td>Sony Projector</td>
-                <td>3</td>
-                <td>Shelf 1</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Table Clips</td>
-                <td>220</td>
-                <td>Shelf 2, Bin 3</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>HDMI Cables</td>
-                <td>40</td>
-                <td>Shelf 4, Bin 1</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>Computer Keyboard</td>
-                <td>2</td>
-                <td>Shelf 2</td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>Zebra Printer</td>
-                <td>5</td>
-                <td>Shelf 5</td>
-            </tr>
-            <tr>
-                <td>6</td>
-                <td>Zebra Printer Labels</td>
-                <td>310</td>
-                <td>Shelf 5, Bin 1</td>
-            </tr>
-            <tr>
-                <td>7</td>
-                <td>VGA Cables</td>
-                <td>9</td>
-                <td>Shelf 4, Bin 2</td>
-            </tr>
-            <tr>
-                <td>8</td>
-                <td>Mini-HDMI Cables</td>
-                <td>13</td>
-                <td>Shelf 4, Bin 3</td>
-            </tr>
-            <tr>
-                <td>9</td>
-                <td>Desktop Computer</td>
-                <td>1</td>
-                <td>Shelf 1</td>
-            </tr>
-            <tr>
-                <td>10</td>
-                <td>Laptop</td>
-                <td>6</td>
-                <td>Shelf 1</td>
-            </tr>
-            <tr>
-                <td>11</td>
-                <td>Panasonic DSLR Camera</td>
-                <td>3</td>
-                <td>Shelf 2, Bin 5</td>
-            </tr>
-            <tr>
-                <td>12</td>
-                <td>Projector Clips</td>
-                <td>16</td>
-                <td>Shelf 6, Bin 1</td>
+            <tr *ngFor = "let item of equipmentItems">
+                <td *ngFor = "let column of headers">
+                    {{item[column]}}
+                </td>
             </tr>
         </tbody>
     </table>
