@@ -13,11 +13,11 @@ export const equipItems: eItem[] = [
 import {fItem} from './Food';
 
 export const foodItems: fItem[] = [
-    {ID: 1, Ingredient: 'Sony Projecter', Quantity: 5, Location: 'bin 1'},
-    {ID: 2, Ingredient: 'HDMI Cables', Quantity: 50, Location: 'bin 1'},
-    {ID: 3, Ingredient: 'Zebra Printer', Quantity: 3, Location: 'bin 1'},
-    {ID: 4, Ingredient: 'VGA cables', Quantity: 100, Location: 'bin 1'},
-    {ID: 5, Ingredient: 'DELL latitude', Quantity: 10, Location: 'bin 1'},
-    {ID: 6, Ingredient: 'xbox 360', Quantity: 2, Location: 'bin 1'}
+    {ID: 1, Ingredient: 'Carrots', Quantity: 5, Location: 'bin 1'},
+    {ID: 2, Ingredient: 'Potatoes', Quantity: 50, Location: 'bin 1'},
+    {ID: 3, Ingredient: '16 oz Steaks', Quantity: 3, Location: 'bin 1'},
+    {ID: 4, Ingredient: 'Eggs', Quantity: 100, Location: 'bin 1'},
+    {ID: 5, Ingredient: 'lbs flour', Quantity: 10, Location: 'bin 1'},
+    {ID: 6, Ingredient: 'Full Rack Ribs', Quantity: 2, Location: 'bin 1'}
 
 ]
